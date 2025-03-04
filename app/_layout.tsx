@@ -30,7 +30,20 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="onboarding/index" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/index" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/password" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register/index" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register/otp" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register/password" options={{ headerShown: false }} />
+
+        <Stack.Screen name="auth/register/business/index" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register/business/otp" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register/business/password" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register/business/company" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register/business/final" options={{ headerShown: false }} />
+
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
