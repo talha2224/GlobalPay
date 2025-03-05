@@ -8,6 +8,7 @@ const Otp = () => {
   const inputRefs = useRef([]);
 
   useEffect(() => {
+    // Ensures that the refs are created before focusing is triggered.
     inputRefs.current = otp.map((_, index) => inputRefs.current[index] || React.createRef());
   }, [otp]);
 
@@ -17,13 +18,21 @@ const Otp = () => {
     setOtp(newOtp);
 
     if (text.length === 1 && index < otp.length - 1) {
-      inputRefs.current[index + 1].current.focus();
+      // Make sure inputRefs is correctly populated before calling .focus
+      const nextInput = inputRefs.current[index + 1];
+      if (nextInput && nextInput.current) {
+        nextInput.current.focus();
+      }
     }
   };
 
   const handleKeyPress = (event, index) => {
     if (event.nativeEvent.key === 'Backspace' && index > 0 && otp[index] === '') {
-      inputRefs.current[index - 1].current.focus();
+      // Make sure inputRefs is correctly populated before calling .focus
+      const prevInput = inputRefs.current[index - 1];
+      if (prevInput && prevInput.current) {
+        prevInput.current.focus();
+      }
     }
   };
 
@@ -42,6 +51,7 @@ const Otp = () => {
       <View style={styles.otpContainer}>
         {otp.map((digit, index) => (<TextInput key={index}style={styles.otpInput}value={digit}onChangeText={(text) => handleOtpChange(text, index)}onKeyPress={(event) => handleKeyPress(event, index)}maxLength={1}keyboardType="numeric"ref={inputRefs.current[index]}/>))}
       </View>
+
 
       <View style={styles.timerContainer}>
         <Entypo name="stopwatch" size={16} color="#8F8F8F" />

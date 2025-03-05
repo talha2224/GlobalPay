@@ -8,6 +8,7 @@ const Otp = () => {
   const inputRefs = useRef([]);
 
   useEffect(() => {
+    // Ensures that the refs are created before focusing is triggered.
     inputRefs.current = otp.map((_, index) => inputRefs.current[index] || React.createRef());
   }, [otp]);
 
@@ -17,16 +18,23 @@ const Otp = () => {
     setOtp(newOtp);
 
     if (text.length === 1 && index < otp.length - 1) {
-      inputRefs.current[index + 1].current.focus();
+      // Make sure inputRefs is correctly populated before calling .focus
+      const nextInput = inputRefs.current[index + 1];
+      if (nextInput && nextInput.current) {
+        nextInput.current.focus();
+      }
     }
   };
 
   const handleKeyPress = (event, index) => {
     if (event.nativeEvent.key === 'Backspace' && index > 0 && otp[index] === '') {
-      inputRefs.current[index - 1].current.focus();
+      // Make sure inputRefs is correctly populated before calling .focus
+      const prevInput = inputRefs.current[index - 1];
+      if (prevInput && prevInput.current) {
+        prevInput.current.focus();
+      }
     }
   };
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
