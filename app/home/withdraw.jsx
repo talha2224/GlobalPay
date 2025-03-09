@@ -39,7 +39,7 @@ const Withdraw = () => {
             <View style={{ backgroundColor: "#FBFBFB", marginTop: 20, borderRadius: 6, padding: 8 }}>
 
                 <Text style={{ marginTop: 5 }}>Amount to withdraw</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 50.00 -100,000.00 ' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5 }} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 50.00 -100,000.00 ' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40 }} />
                 <Text style={{ marginTop: 10, color: "#FF6F00" }}>0.20% will be deducted as charges fee</Text>
 
             </View>
@@ -152,10 +152,10 @@ const Withdraw = () => {
 
                                 <Text>Card Info</Text>
 
-                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6}} placeholder='Name on card' placeholderTextColor={"#c4c4c4"}/>
-                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6}} placeholder='Card Number' placeholderTextColor={"#c4c4c4"}/>
-                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6}} placeholder='MM/YY' placeholderTextColor={"#c4c4c4"}/>
-                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6}} placeholder='CVV' placeholderTextColor={"#c4c4c4"}/>
+                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6,height:40}} placeholder='Name on card' placeholderTextColor={"#c4c4c4"}/>
+                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6,height:40}} placeholder='Card Number' placeholderTextColor={"#c4c4c4"}/>
+                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6,height:40}} placeholder='MM/YY' placeholderTextColor={"#c4c4c4"}/>
+                                <TextInput style={{backgroundColor:"#FCFCFC",width:"100%",height:50,paddingHorizontal:10,marginTop:10,borderRadius:6,height:40}} placeholder='CVV' placeholderTextColor={"#c4c4c4"}/>
 
                             </View>
 

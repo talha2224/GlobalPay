@@ -36,7 +36,7 @@ const Deposit = () => {
             <View style={{ backgroundColor: "#FBFBFB", marginTop: 20, borderRadius: 6, padding: 8 }}>
 
                 <Text style={{ marginTop: 5 }}>Amount</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ Enter amount to deposit' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5 }} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ Enter amount to deposit' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40}} />
                 <Text style={{ marginTop: 10, color: "#FF6F00" }}>0.20% will be deducted as charges fee</Text>
 
             </View>
