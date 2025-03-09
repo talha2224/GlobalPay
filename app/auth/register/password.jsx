@@ -37,7 +37,7 @@ const Password = () => {
             }
 
 
-            <Pressable onPress={() => router.push('/auth/register')} style={styles.verifyButton}>
+            <Pressable onPress={()=>router.push("/home")} style={styles.verifyButton}>
                 <Text style={styles.verifyButtonText}>Create</Text>
             </Pressable>
 

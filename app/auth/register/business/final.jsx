@@ -10,7 +10,7 @@ const Final = () => {
 
 
             <View style={{justifyContent:"flex-end",alignItems:"flex-end",position:"absolute",top:40,right:20}}>
-                <Pressable onPress={() => router.push('/onboarding')}>
+                <Pressable onPress={() => router.push('/admin')}>
                     <Entypo name="cross" size={30} color="#FF0D00" />
                 </Pressable>
             </View>

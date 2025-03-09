@@ -25,7 +25,7 @@ const Password = () => {
                 <Text style={{ fontSize: 16, fontWeight: "600" }}>Forgot password?</Text>
             </Pressable>
 
-            <Pressable style={{ backgroundColor: "#037AE0", height: 50, width: "100%", marginTop: 20, borderRadius: 10, paddingHorizontal: 20, justifyContent: "center", alignItems: "center" }}>
+            <Pressable onPress={()=>router.push("/home")} style={{ backgroundColor: "#037AE0", height: 50, width: "100%", marginTop: 20, borderRadius: 10, paddingHorizontal: 20, justifyContent: "center", alignItems: "center" }}>
                 <Text style={{ color: '#fff', fontSize: 16, fontWeight: "600" }}>Log In</Text>
             </Pressable>
 

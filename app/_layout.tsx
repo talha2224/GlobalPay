@@ -28,7 +28,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={DefaultTheme}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="onboarding/index" options={{ headerShown: false }} />
@@ -43,6 +43,32 @@ export default function RootLayout() {
         <Stack.Screen name="auth/register/business/password" options={{ headerShown: false }} />
         <Stack.Screen name="auth/register/business/company" options={{ headerShown: false }} />
         <Stack.Screen name="auth/register/business/final" options={{ headerShown: false }} />
+
+
+        <Stack.Screen name="home/index" options={{ headerShown: false }} />
+        <Stack.Screen name="home/notification" options={{ headerShown: false }} />
+        <Stack.Screen name="home/card" options={{ headerShown: false }} />
+        <Stack.Screen name="home/deposit" options={{ headerShown: false }} />
+        <Stack.Screen name="home/qr" options={{ headerShown: false }} />
+        <Stack.Screen name="home/withdraw" options={{ headerShown: false }} />
+        <Stack.Screen name="home/profile" options={{ headerShown: false }} />
+        <Stack.Screen name="home/security" options={{ headerShown: false }} />
+        <Stack.Screen name="home/payment" options={{ headerShown: false }} />
+        <Stack.Screen name="home/community" options={{ headerShown: false }} />
+        <Stack.Screen name="home/about" options={{ headerShown: false }} />
+        <Stack.Screen name="home/stake" options={{ headerShown: false }} />
+
+
+
+        <Stack.Screen name="admin/index" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/api" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/transactions" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/document" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/profile" options={{ headerShown: false }} />
+        <Stack.Screen name="admin/notification" options={{ headerShown: false }} />
+
+
+
 
         <Stack.Screen name="+not-found" />
       </Stack>
