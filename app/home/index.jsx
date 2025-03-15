@@ -37,9 +37,16 @@ const Home = () => {
 
         <View style={{ marginTop: 30 }}>
           <Text style={{ color: "#848484" }}>Est. Total Value (USD)</Text>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 10, marginTop: 5 }}>
-            <Text style={{ fontSize: 30, fontWeight: "350" }}>$5.00</Text>
-            <AntDesign name="eyeo" size={20} color="#848484" />
+
+          <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 10, marginTop: 5 }}>
+              <Text style={{ fontSize: 30, fontWeight: "350" }}>$5.00</Text>
+              <AntDesign name="eyeo" size={20} color="#848484" />
+            </View>
+            <TouchableOpacity onPress={() => setstakeModel(true)} style={{ backgroundColor: "#FBFBFB", width: 100, height: 40, borderRadius: 5, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: 8 }}>
+              <AntDesign name="star" size={16} color="black" />
+              <Text style={{ fontSize: 14, fontWeight: "400" }}>Stake</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -69,10 +76,6 @@ const Home = () => {
           <TouchableOpacity onPress={() => setConvertModel(true)} style={{ backgroundColor: "#FBFBFB", width: 100, height: 40, borderRadius: 5, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: 8 }}>
             <MaterialCommunityIcons name="account-convert" size={16} color="black" />
             <Text style={{ fontSize: 14, fontWeight: "500" }}>Convert</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => setstakeModel(true)} style={{ backgroundColor: "#FBFBFB", width: 100, height: 40, borderRadius: 5, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: 8 }}>
-            <AntDesign name="star" size={16} color="black" />
-            <Text style={{ fontSize: 14, fontWeight: "400" }}>Stake</Text>
           </TouchableOpacity>
 
         </ScrollView>
@@ -247,7 +250,7 @@ const Home = () => {
 
                 <Text style={{ fontSize: 18 }}>Transfer</Text>
                 <Text style={{ marginTop: 5 }}>Wallet Address</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='Enter wallet address' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40 }} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='Enter wallet address' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
 
                 <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginTop: 10, backgroundColor: "#FBFBFB", paddingVertical: 6, paddingHorizontal: 8, borderRadius: 5 }}>
 
@@ -274,7 +277,7 @@ const Home = () => {
               <View style={{ backgroundColor: "#FBFBFB", marginTop: 20, borderRadius: 6, paddingHorizontal: 10, paddingVertical: 20 }}>
 
                 <Text style={{ fontSize: 18 }}>Amount</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='₿ 0000' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40 }} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='₿ 0000' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
 
                 <Text style={{ marginTop: 10, color: "#FF6F00" }}>0.20% will be deducted as charges fee</Text>
 
@@ -303,7 +306,7 @@ const Home = () => {
               <View style={{ backgroundColor: "#FBFBFB", marginTop: 10, borderRadius: 6, padding: 8 }}>
 
                 <Text style={{ marginTop: 5 }}>Send to</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='Enter user ID' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40 }} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='Enter user ID' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
 
                 <Text style={{ marginTop: 5 }}>From</Text>
 
@@ -331,7 +334,7 @@ const Home = () => {
               <View style={{ backgroundColor: "#FBFBFB", marginTop: 20, borderRadius: 6, paddingHorizontal: 10, paddingVertical: 20 }}>
 
                 <Text style={{ fontSize: 18 }}>Amount</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 50.00 -100,000.00 ' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5 ,height:40}} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 50.00 -100,000.00 ' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
 
                 <Text style={{ marginTop: 10, color: "#FF6F00" }}>0.20% will be deducted as charges fee</Text>
 
@@ -362,7 +365,7 @@ const Home = () => {
               <View style={{ backgroundColor: "#FBFBFB", marginTop: 20, borderRadius: 6, padding: 8 }}>
 
                 <Text style={{ marginTop: 5 }}>Amount to withdraw</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 50.00 -100,000.00 ' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40}} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 50.00 -100,000.00 ' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
                 <Text style={{ marginTop: 10, color: "#FF6F00" }}>0.20% will be deducted as charges fee</Text>
 
               </View>
@@ -416,7 +419,7 @@ const Home = () => {
               <View style={{ backgroundColor: "#FBFBFB", marginTop: 20, borderRadius: 6, padding: 8 }}>
 
                 <Text style={{ marginTop: 5 }}>USD</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 0.00' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40}} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='$ 0.00' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
 
                 {/* <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginTop: 10, backgroundColor: "#FBFBFB", paddingVertical: 6, paddingHorizontal: 8, borderRadius: 5 }}>
 
@@ -449,7 +452,7 @@ const Home = () => {
               <View style={{ backgroundColor: "#FBFBFB", marginTop: 10, borderRadius: 6, padding: 8 }}>
 
                 <Text style={{ marginTop: 5 }}>Crypto coin</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='₿ 0.0000' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40 }} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='₿ 0.0000' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
                 <Text style={{ marginTop: 15, color: "#848484" }}>Select coin</Text>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginTop: 10 }}>
 
@@ -493,7 +496,7 @@ const Home = () => {
 
                 <Text style={{ fontSize: 18 }}>Stake</Text>
                 <Text style={{ marginTop: 5 }}>Stake Percentage</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='Enter stake percentage' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40}} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='Enter stake percentage' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
 
                 <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginTop: 10, backgroundColor: "#FBFBFB", paddingVertical: 6, paddingHorizontal: 8, borderRadius: 5 }}>
 
@@ -520,12 +523,12 @@ const Home = () => {
               <View style={{ backgroundColor: "#FBFBFB", marginTop: 30, borderRadius: 6, paddingHorizontal: 10, paddingVertical: 20 }}>
 
                 <Text style={{ fontSize: 18 }}>Amount</Text>
-                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='₿ 0000' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5,height:40 }} />
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='₿ 0000' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
 
                 <Text style={{ marginTop: 10, color: "#FF6F00" }}>0.20% will be deducted as charges fee</Text>
 
 
-                <TouchableOpacity onPress={() => { setstakeModel(false);}} style={{ backgroundColor: "#037AE0", width: "100%", height: 50, justifyContent: "center", alignItems: "center", marginTop: 8, borderRadius: 100 }}>
+                <TouchableOpacity onPress={() => { setstakeModel(false); }} style={{ backgroundColor: "#037AE0", width: "100%", height: 50, justifyContent: "center", alignItems: "center", marginTop: 8, borderRadius: 100 }}>
                   <Text style={{ color: "#fff" }}>Stake</Text>
                 </TouchableOpacity>
 
