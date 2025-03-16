@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Pressable, Text, TextInput, View } from 'react-native'
 import { Entypo } from '@expo/vector-icons';
 import { router } from 'expo-router';
+import Flag from '../../assets/images/auth/flag.png'
 
 const Password = () => {
 

@@ -43,7 +43,7 @@ const Profile = () => {
                     <View>
                         <Text style={{ fontSize: 16 }}>Verify your identity</Text>
                         <Text style={{ color: "#848484", marginTop: 6 }}>Start your spending journey today.</Text>
-                        <TouchableOpacity style={{ backgroundColor: "#037AE0", width: 80, height: 40, justifyContent: "center", alignItems: "center", marginTop: 8, borderRadius: 100 }}>
+                        <TouchableOpacity onPress={()=>router.push("/home/verify/nationality")} style={{ backgroundColor: "#037AE0", width: 80, height: 40, justifyContent: "center", alignItems: "center", marginTop: 8, borderRadius: 100 }}>
                             <Text style={{ color: "#fff" }}>Verify</Text>
                         </TouchableOpacity>
                     </View>

@@ -4,6 +4,7 @@ import { AntDesign, Entypo, Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import Google from '../../../assets/images/auth/google.png'
 import Apple from '../../../assets/images/auth/apple.png'
+import Flag from '../../../assets/images/auth/flag.png'
 
 const Register = () => {
 
@@ -24,11 +25,23 @@ const Register = () => {
                 <Pressable onPress={() => { setActiveTab("phone") }} style={{ borderBottomWidth: 2, borderBottomColor: activeTab == "phone" ? "#0E47A1" : "#fff", paddingBottom: 4, width: 70 }}><Text style={{ color: activeTab == "phone" ? "#0E47A1" : "#666666", textAlign: "center", fontSize: 16 }}>Phone</Text></Pressable>
             </View>
 
-            <TextInput keyboardType={activeTab !== 'email' ? "numeric" : "default"}   placeholderTextColor={"#C9C5B4"} placeholder={activeTab == 'email' ? 'e.g. example@gmail.com' : 'e.g. +12********'} style={{ backgroundColor: "#FCFCFC", height: 50, width: "100%", marginTop: 20, borderRadius: 10, paddingHorizontal: 20 }} />
+            {
+                activeTab == 'email' ?
+                    <TextInput placeholderTextColor={"#C9C5B4"} placeholder={'e.g. example@gmail.com'} style={{ backgroundColor: "#FCFCFC", height: 50, width: "100%", marginTop: 20, borderRadius: 10, paddingHorizontal: 20 }} />
+                    :
+                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: 20, }}>
+                        <View style={{ flexDirection: "row", alignItems: "center", backgroundColor: "#F7F7F7", padding: 10, borderRadius: 5, marginRight: 5 }}>
+                            <Image source={Flag} style={{ marginRight: 10 }} />
+                            <Text>USA</Text>
+                        </View>
+                        <TextInput placeholderTextColor={"#C9C5B4"} placeholder={'e.g. +12********'} style={{ flex: 1, borderRadius: 10, paddingHorizontal: 20, backgroundColor: "#FCFCFC" }} />
+                    </View>
+            }
 
 
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 10,marginTop:10 }}>
-                <Pressable onPress={() => setChecked(!isChecked)} style={{width:15,height:15,borderRadius: 5,borderWidth:1,borderColor: "#037AE0",justifyContent: "center",alignItems: "center", borderColor: isChecked ? '#037AE0' : '#ddd' }}>
+
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 10, marginTop: 10 }}>
+                <Pressable onPress={() => setChecked(!isChecked)} style={{ width: 15, height: 15, borderRadius: 5, borderWidth: 1, borderColor: "#037AE0", justifyContent: "center", alignItems: "center", borderColor: isChecked ? '#037AE0' : '#ddd' }}>
                     {isChecked && <Ionicons name="checkmark" size={10} color="#037AE0" />}
                 </Pressable>
                 <Text style={{ color: "#989999", fontSize: 12 }}>By clicking ‘Next’, you agree to our Terms of Service</Text>

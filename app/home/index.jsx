@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Dimensions, Image, TouchableOpacity, ScrollView, Text, TextInput, View } from 'react-native'
+import { Dimensions, Image, TouchableOpacity, ScrollView, Text, TextInput, View, Pressable } from 'react-native'
 import BottomNavBar from '../../components/BottomNav'
 import Navbar from '../../components/Navbar'
 import { AntDesign, Feather, FontAwesome5, Foundation, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons'
@@ -21,7 +21,8 @@ const Home = () => {
   const [transferModel, setTransferModel] = useState(false)
   const [withdrawModel, setWithdrawModel] = useState(false)
   const [convertModel, setConvertModel] = useState(false)
-  const [stakeModel, setstakeModel] = useState(false)
+  const [stakeModel, setstakeModel] = useState(false);
+  const [depositModel, setDepositModel] = useState(false)
 
 
   return (
@@ -53,7 +54,7 @@ const Home = () => {
 
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ flexDirection: "row", gap: 10, alignItems: "center", marginTop: 20 }}>
 
-          <TouchableOpacity onPress={() => setConvertModel(true)} style={{ backgroundColor: "#FBFBFB", width: 100, height: 40, borderRadius: 5, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: 8 }}>
+          <TouchableOpacity onPress={() => setDepositModel(true)} style={{ backgroundColor: "#FBFBFB", width: 100, height: 40, borderRadius: 5, flexDirection: "row", justifyContent: "center", alignItems: "center", gap: 8 }}>
             <Foundation name="dollar" size={20} color="black" />
             <Text style={{ fontSize: 14, fontWeight: "500" }}>Deposit</Text>
           </TouchableOpacity>
@@ -296,10 +297,64 @@ const Home = () => {
       }
 
       {
+        depositModel && (
+          <View style={{ position: "absolute", flex: 1, backgroundColor: "rgba(27, 27, 27, 0.4)", width: Dimensions.get("screen").width, height: Dimensions.get("screen").height, justifyContent: "flex-end", alignItems: "center" }}>
+
+            <View style={{ backgroundColor: "#fff", padding: 20, width: "100%", height: "66%", marginHorizontal: 30, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
+
+              <Text style={{ fontSize: 18,marginTop: 20,marginBottom:8}}>Deposit</Text>
+              <View style={{ backgroundColor: "#FBFBFB", borderRadius: 6, padding: 8 }}>
+                <Text style={{ marginTop: 5 }}>Wallet Address</Text>
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='Enter wallet address' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
+
+                <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "flex-start", marginTop: 10, backgroundColor: "#FBFBFB", paddingVertical: 6, paddingHorizontal: 8, borderRadius: 5 }}>
+
+                  <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+
+                    <Image source={Btc} />
+                    <View>
+                      <Text style={{ fontSize: 16 }}>Wallet</Text>
+                      <Text style={{ color: "#848484" }}>0.00053</Text>
+                    </View>
+                  </View>
+
+                  <View style={{ paddingHorizontal: 13, paddingVertical: 10, backgroundColor: "#EBEDEE", borderRadius: 100, }}>
+                    <Text style={{ color: "#000", textAlign: "center" }}>Change</Text>
+                  </View>
+
+
+                </View>
+
+
+
+              </View>
+
+              <View style={{ backgroundColor: "#FBFBFB", marginTop: 20, borderRadius: 6, paddingHorizontal: 10, paddingVertical: 20 }}>
+
+                <Text style={{ fontSize: 18 }}>Amount</Text>
+                <TextInput placeholderTextColor={"#C9C5B4"} placeholder='₿ 0000' style={{ backgroundColor: "#fff", marginTop: 7, borderRadius: 5, paddingHorizontal: 5, height: 40 }} />
+
+                <Text style={{ marginTop: 10, color: "#FF6F00" }}>0.20% will be deducted as charges fee</Text>
+
+
+                <TouchableOpacity onPress={() => { setDepositModel(false) }} style={{ backgroundColor: "#037AE0", width: "100%", height: 50, justifyContent: "center", alignItems: "center", marginTop: 8, borderRadius: 100 }}>
+                  <Text style={{ color: "#fff" }}>Confirm</Text>
+                </TouchableOpacity>
+
+
+              </View>
+
+            </View>
+
+          </View>
+        )
+      }
+
+      {
         transferModel && (
           <View style={{ position: "absolute", flex: 1, backgroundColor: "rgba(27, 27, 27, 0.4)", width: Dimensions.get("screen").width, height: Dimensions.get("screen").height, justifyContent: "flex-end", alignItems: "center" }}>
 
-            <View style={{ backgroundColor: "#fff", padding: 20, width: "100%", height: "80%", marginHorizontal: 30, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
+            <View style={{ backgroundColor: "#fff", padding: 20, width: "100%", height: "65%", marginHorizontal: 30, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
 
               <Text style={{ fontSize: 18, paddingHorizontal: 8 }}>Transfer</Text>
 
@@ -340,7 +395,7 @@ const Home = () => {
 
 
                 <TouchableOpacity onPress={() => { setTransferModel(false); setSuccessfulModel(true) }} style={{ backgroundColor: "#037AE0", width: "100%", height: 50, justifyContent: "center", alignItems: "center", marginTop: 14, borderRadius: 100 }}>
-                  <Text style={{ color: "#fff" }}>Transfer</Text>
+                  <Text style={{ color: "#fff" }}>Send</Text>
                 </TouchableOpacity>
 
 
@@ -357,7 +412,13 @@ const Home = () => {
         withdrawModel && (
           <View style={{ position: "absolute", flex: 1, backgroundColor: "rgba(27, 27, 27, 0.4)", width: Dimensions.get("screen").width, height: Dimensions.get("screen").height, justifyContent: "flex-end", alignItems: "center" }}>
 
-            <View style={{ backgroundColor: "#fff", padding: 20, width: "100%", height: "80%", marginHorizontal: 30, borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
+            <View style={{ backgroundColor: "#fff", padding: 20, width: "100%", height: "100%", marginHorizontal: 30, paddingTop: 50 }}>
+
+
+              <Pressable onPress={() => { setWithdrawModel(false) }} style={{ flexDirection: "row", alignItems: "center", marginBottom: 20 }}>
+                <Ionicons name="chevron-back" size={20} color="#037AE0" />
+                <Text style={{ color: "#037AE0" }}>Back</Text>
+              </Pressable>
 
               <Text style={{ fontSize: 18, paddingHorizontal: 8 }}>Withdraw</Text>
               <Text style={{ color: "#8f8f8f", paddingHorizontal: 8 }}>Sed ut perspiciatis unde omnis iste </Text>

@@ -56,7 +56,9 @@ export default function RootLayout() {
         <Stack.Screen name="home/payment" options={{ headerShown: false }} />
         <Stack.Screen name="home/community" options={{ headerShown: false }} />
         <Stack.Screen name="home/about" options={{ headerShown: false }} />
-        <Stack.Screen name="home/stake" options={{ headerShown: false }} />
+        <Stack.Screen name="home/verify/nationality" options={{ headerShown: false }} />
+        <Stack.Screen name="home/verify/personal" options={{ headerShown: false }} />
+        <Stack.Screen name="home/verify/final" options={{ headerShown: false }} />
 
 
 

@@ -87,22 +87,8 @@ const styles = StyleSheet.create({
   verificationText: {
     marginTop: 10,color: '#BBB7A6',
   },
-  otpContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 30,
-  },
-  otpInput: {
-    width:50,
-    height:50,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    marginRight: 5,
-    textAlign: 'center',
-    fontSize: 16,
-    backgroundColor:"#F4FCFF",
-  },
+  otpContainer: {flexDirection: 'row',justifyContent: 'center',marginTop: 30,},
+  otpInput: {width:50,height:50,borderWidth: 1,borderColor: '#ddd',borderRadius: 8,marginRight: 5,textAlign: 'center',fontSize: 16,backgroundColor:"#F4FCFF",},
   timerContainer: {
     flexDirection: 'row',
     gap: 5,
