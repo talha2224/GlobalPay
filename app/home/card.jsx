@@ -57,13 +57,13 @@ const Card = () => {
                             </View>
 
 
-                            <View style={{ justifyContent: "space-between", alignItems: "center", marginTop: 10, flexDirection: "row", gap: 10 }}>
+                            <View style={{ justifyContent: "space-between", alignItems: "center", marginTop: 10, flexDirection: "row", gap:3 }}>
 
                                 <Pressable onPress={() => setCardDesignModel(true)} style={{ flex: 1, paddingVertical: 10, paddingHorizontal: 10, backgroundColor: "#E6F2FC", borderRadius: 10, flexDirection: "row", alignItems: "center", gap: 8 }}>
                                     <MaterialCommunityIcons name="google-circles-extended" size={20} color="#037AE0" />
                                     <View>
                                         <Text>Card design</Text>
-                                        <Text style={{ color: "#8F8F8F", fontSize: 14 }}>Change your card design</Text>
+                                        <Text style={{ color: "#8F8F8F", fontSize: 10 }} numberOfLines={1}>Change your card design</Text>
                                     </View>
                                 </Pressable>
 
@@ -71,7 +71,7 @@ const Card = () => {
                                     <MaterialCommunityIcons name="google-circles-extended" size={20} color="#037AE0" />
                                     <View>
                                         <Text>Card settings</Text>
-                                        <Text style={{ color: "#8F8F8F", fontSize: 14 }}>Change your card settings</Text>
+                                        <Text style={{ color: "#8F8F8F", fontSize: 10 }} numberOfLines={1}>Change your card settings</Text>
                                     </View>
                                 </Pressable>
 

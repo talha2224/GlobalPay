@@ -68,6 +68,10 @@ const Withdraw = () => {
 
             </View>
 
+            <TouchableOpacity style={{ backgroundColor: "#037AE0", width: "100%", height: 50, justifyContent: "center", alignItems: "center", marginTop: 8, borderRadius: 100 }}>
+                <Text style={{ color: "#fff" }}>Confirm</Text>
+            </TouchableOpacity>
+
             <BottomNavBar />
 
             {/* MODEL  */}
@@ -143,7 +147,7 @@ const Withdraw = () => {
                                                 </View>
                                             </View>
 
-                                            <Pressable onPress={()=>setremoveCard(true)}><Text style={{color:"#FF6F00"}}>Remove</Text></Pressable>
+                                            <Pressable onPress={() => setremoveCard(true)}><Text style={{ color: "#FF6F00" }}>Remove</Text></Pressable>
 
 
 
